@@ -1,0 +1,144 @@
+
+/* Search animations and styles */
+@keyframes input-focus {
+  0% { background-color: transparent; }
+  50% { background-color: var(--accent-subtle); }
+  100% { background-color: transparent; }
+}
+
+.search-input-animated:focus {
+  animation: input-focus 0.6s ease-out;
+}
+
+/* Search placeholder animation */
+@keyframes placeholder-slide {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.search-input-animated::placeholder {
+  animation: placeholder-slide 3s infinite;
+  transition: all 0.3s ease;
+}
+
+/* Search button pulse effect */
+@keyframes search-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.search-button-pulse:hover {
+  animation: search-pulse 1s infinite;
+}
+
+/* Voice input visualization */
+.voice-visualization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.voice-visualization.active {
+  opacity: 1;
+}
+
+.voice-active {
+  background: linear-gradient(135deg, #9b87f5, #7E69AB);
+}
+
+.voice-active:hover {
+  background: linear-gradient(135deg, #8b77e5, #6E59A5);
+}
+
+.bar {
+  width: 2px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.voice-visualization.active .bar {
+  animation: soundBars 1.2s infinite;
+}
+
+.voice-visualization.active .bar-1 {
+  animation-delay: 0s;
+  height: 10px;
+}
+
+.voice-visualization.active .bar-2 {
+  animation-delay: 0.2s;
+  height: 16px;
+}
+
+.voice-visualization.active .bar-3 {
+  animation-delay: 0.4s;
+  height: 10px;
+}
+
+@keyframes soundBars {
+  0% { height: 5px; }
+  50% { height: 15px; }
+  100% { height: 5px; }
+}
+
+/* Profile dropdown animation and styling */
+@keyframes profile-dropdown-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-dropdown-menu {
+  animation: profile-dropdown-in 0.25s ease-out;
+  width: auto;
+  min-width: 220px;
+  max-width: 280px;
+  z-index: 50;
+  right: 0;
+  position: absolute;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(var(--border), 0.15);
+  overflow: hidden;
+}
+
+/* Making menu items interactive */
+.profile-dropdown-menu a,
+.profile-dropdown-menu button {
+  transition: all 0.15s ease-out;
+}
+
+.profile-dropdown-menu a:hover,
+.profile-dropdown-menu button:hover {
+  background-color: rgba(var(--accent), 0.1);
+}
+
+/* Force right alignment for all screen sizes */
+@media (max-width: 768px) {
+  .profile-dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    transform-origin: top right !important;
+  }
+}
+
+/* Legacy class for backward compatibility */
+.profile-dropdown-animate-in {
+  animation: profile-dropdown-in 0.25s ease-out;
+  width: auto;
+  min-width: 220px;
+  max-width: 280px;
+  z-index: 50;
+  right: 0;
+  position: absolute;
+}

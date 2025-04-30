@@ -1,0 +1,50 @@
+
+.neo-brutal-shadow {
+  @apply shadow-[4px_4px_12px_rgb(0_0_0/0.3)];
+}
+
+.neo-brutal-card {
+  @apply bg-card/50 border border-border/50 backdrop-blur-sm
+         hover:bg-card/80 transition-all duration-500 /* Increased from 200ms to 500ms */
+         shadow-[4px_4px_12px_rgb(0_0_0/0.3)]
+         hover:shadow-[6px_6px_16px_rgb(0_0_0/0.35)]
+         dark:hover:bg-card/70 dark:hover:border-border/60
+         rounded-xl;
+}
+
+.neo-brutal-button {
+  @apply bg-primary text-primary-foreground 
+         hover:bg-primary/90 transition-all duration-500 /* Increased from 200ms to 500ms */
+         shadow-[3px_3px_0px_rgb(0_0_0/0.3)];
+}
+
+.chart-container {
+  @apply w-full h-[400px] rounded-xl overflow-hidden 
+         bg-card border border-border/50 backdrop-blur-sm
+         shadow-[4px_4px_12px_rgb(0_0_0/0.3)];
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 
+         rounded-xl shadow-[4px_4px_12px_rgb(0_0_0/0.3)]
+         hover:shadow-[6px_6px_16px_rgb(0_0_0/0.35)]
+         dark:bg-black/10 dark:border-white/10;
+}
+
+.parallelogram {
+  transform: skew(-20deg);
+  @apply shadow-[3px_3px_0px_rgb(0_0_0/0.3)];
+}
+
+.parallelogram-content {
+  transform: skew(20deg);
+}
+
+/* Enhanced dark mode effects */
+.dark .neo-brutal-card:hover {
+  @apply bg-card/70 border-border/60 shadow-[6px_6px_16px_rgba(255,255,255,0.05)];
+}
+
+.dark .glass-card:hover {
+  @apply bg-black/20 border-white/20 shadow-[6px_6px_16px_rgba(255,255,255,0.05)];
+}

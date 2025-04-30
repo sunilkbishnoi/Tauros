@@ -1,0 +1,181 @@
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(20, end);
+}
+
+@keyframes blink {
+  from, to { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Navbar animations with home theme */
+@keyframes navUnderlineSlide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navUnderlinePulse {
+  0% {
+    opacity: 0.8;
+    box-shadow: 0 1px 6px rgba(124, 58, 237, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 1px 12px rgba(124, 58, 237, 0.6);
+  }
+  100% {
+    opacity: 0.8;
+    box-shadow: 0 1px 6px rgba(124, 58, 237, 0.3);
+  }
+}
+
+.nav-underline {
+  background-size: 200% auto;
+  animation: gradient 4s ease infinite, navUnderlinePulse 3s ease-in-out infinite;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy effect */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.nav-link-active {
+  transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.ease-in-out-expo {
+  transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: navFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes navHoverIn {
+  0% { 
+    opacity: 0; 
+    transform: scaleX(0.7); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scaleX(1); 
+  }
+}
+
+.animate-navHoverIn {
+  animation: navHoverIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: center;
+}
+
+/* Login form animations */
+@keyframes formFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-fade-in {
+  animation: formFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes cardPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+  }
+}
+
+.card-pulse {
+  animation: cardPulse 2s infinite;
+}
