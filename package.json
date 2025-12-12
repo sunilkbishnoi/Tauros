@@ -86,3 +86,16 @@
     "vite": "^5.4.1"
   }
 }
+
+
+
+{
+ "_comment": "This file contains user configuration settings",
+ "name": "John Doe",
+ "age": 30,
+ "address": {
+   "_comment": "User's primary address",
+   "street": "123 Main St",
+   "city": "Anytown"
+ }
+}
